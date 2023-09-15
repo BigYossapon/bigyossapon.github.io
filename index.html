@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Page</title>
+    <script src="functions.js"></script>
 </head>
 
 <body>
@@ -21,39 +22,42 @@
         <tbody>
             <tr>
                 <td>Image </td>
-                <td><button onclick="downloadFile('image1.jpg')">Download Image 1</button></td>
-                <script type="text/javascript">
-                    // JavaScript function to initiate the download
-
-
-                    // JavaScript function to initiate the download
-                    function downloadFileimage(fileUrl) {
-                        // Construct a temporary anchor element
-                        JavascriptChannel.postMessage('https://upload.wikimedia.org/wikipedia/commons/6/60/The_Organ_at_Arches_National_Park_Utah_Corrected.jpg');
-
-                    }
-                </script>
+                <td><button onclick="downloadFileimage('image1.jpg')">Download Image</button></td>
             </tr>
 
             <tr>
                 <td>PDF </td>
-                <td><button onclick="downloadFile('pdf1.pdf')">Download PDF 1</button></td>
-                <script type="text/javascript">
-                    // JavaScript function to initiate the download
-                    function downloadFilepdf(fileUrl) {
-                        // Construct a temporary anchor element
-                        JavascriptChannel.postMessage('http://enos.itcollege.ee/~jpoial/allalaadimised/reading/Android-Programming-Cookbook.pdf');
+                <td><button onclick="downloadFilepdf('pdf1.pdf')">Download PDF</button></td>
+            </tr>
 
-                    }
+            <tr>
+                <td>Imagesplitfile </td>
+                <td><button onclick="downloadFileimagesplit('image1.jpg')">Download Image</button></td>
+            </tr>
 
-
-                </script>
+            <tr>
+                <td>PDFsplitfile </td>
+                <td><button onclick="downloadFilepdfsplit('pdf1.pdf')">Download PDF</button></td>
             </tr>
             <!-- Add more rows as needed -->
         </tbody>
     </table>
 
+    <script type="text/javascript">
+        // JavaScript function to initiate the download
+        function downloadFilepdf(fileUrl) {
+            // Construct a temporary anchor element
+            JavascriptChannel.postMessage('http://enos.itcollege.ee/~jpoial/allalaadimised/reading/Android-Programming-Cookbook.pdf');
 
+        }
+
+        // JavaScript function to initiate the download
+        function downloadFileimage(fileUrl) {
+            // Construct a temporary anchor element
+            JavascriptChannel.postMessage('https://upload.wikimedia.org/wikipedia/commons/6/60/The_Organ_at_Arches_National_Park_Utah_Corrected.jpg');
+
+        }
+    </script>
 </body>
 
 </html>
