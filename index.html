@@ -14,21 +14,18 @@
     <table border="1">
         <thead>
             <tr>
-                <th>File Name</th>
+                <th>File type</th>
                 <th>Download Button</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Image 1</td>
+                <td>Image </td>
                 <td><button onclick="downloadFile('image1.jpg')">Download Image 1</button></td>
             </tr>
+
             <tr>
-                <td>Image 2</td>
-                <td><button onclick="downloadFile('image2.jpg')">Download Image 2</button></td>
-            </tr>
-            <tr>
-                <td>PDF 1</td>
+                <td>PDF </td>
                 <td><button onclick="downloadFile('pdf1.pdf')">Download PDF 1</button></td>
             </tr>
             <!-- Add more rows as needed -->
@@ -37,20 +34,17 @@
 
     <script>
         // JavaScript function to initiate the download
-        function downloadFile(fileUrl) {
+        function downloadFilepdf(fileUrl) {
+            // Construct a temporary anchor element
+            JavascriptChannel.postMessage('http://enos.itcollege.ee/~jpoial/allalaadimised/reading/Android-Programming-Cookbook.pdf');
+
+        }
+
+        // JavaScript function to initiate the download
+        function downloadFileimage(fileUrl) {
             // Construct a temporary anchor element
             JavascriptChannel.postMessage('https://upload.wikimedia.org/wikipedia/commons/6/60/The_Organ_at_Arches_National_Park_Utah_Corrected.jpg');
-            var anchor = document.createElement("a");
-            anchor.href = fileUrl;
-            anchor.download = fileUrl.split("/").pop(); // Extracts the filename from the URL
-            anchor.style.display = "none";
 
-            // Append the anchor to the body and trigger the click event
-            document.body.appendChild(anchor);
-            anchor.click();
-
-            // Remove the anchor from the body
-            document.body.removeChild(anchor);
         }
     </script>
 </body>
