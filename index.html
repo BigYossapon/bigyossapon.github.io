@@ -1,0 +1,46 @@
+<html>
+<!-- Copyright 2013 The Flutter Authors. All rights reserved.
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file. -->
+<html lang="en">
+
+<head>
+    <title>Load file or HTML string example</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="script.js"></script>
+    <script src="functions.js"></script>
+</head>
+
+<body id="coloredDiv">
+
+    <h1>Local demo page</h1>
+    <p>
+        This is an example page used to demonstrate how to load a local file or HTML
+        string using the <a href="https://pub.dev/packages/webview_flutter">Flutter
+            webview</a> plugin.sdad
+    </p>
+    <button type="button" onclick="changeColor()" class="btn btn-info" style="width: 180px; height: 90px;"
+        value="CLICK">clicknextjs</button>
+    <button type="button" onclick="myfunction()" style="width: 180px; height: 90px;" value="CLICK">Download</button>
+
+    <script type="text/javascript">
+        function myfunction() {
+            alert("how are you");
+            // 'http://enos.itcollege.ee/~jpoial/allalaadimised/reading/Android-Programming-Cookbook.pdf'
+            JavascriptChannel.postMessage('https://upload.wikimedia.org/wikipedia/commons/6/60/The_Organ_at_Arches_National_Park_Utah_Corrected.jpg');
+            //DownloadChannel.postMessage('http://enos.itcollege.ee/~jpoial/allalaadimised/reading/Android-Programming-Cookbook.pdf');
+        }  
+    </script>
+
+
+
+
+
+    <button onclick="changeColor()" style="width: 180px; height: 90px;" value="CLICK">Changes color</button>
+    <button onclick="changeColor()">Change color</button>
+    <div id="my-div"></div>
+
+
+</body>
+
+</html>
