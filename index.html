@@ -1,46 +1,58 @@
-<html>
-<!-- Copyright 2013 The Flutter Authors. All rights reserved.
-Use of this source code is governed by a BSD-style license that can be
-found in the LICENSE file. -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Load file or HTML string example</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <script src="script.js"></script>
-    <script src="functions.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Page</title>
 </head>
 
-<body id="coloredDiv">
+<body>
+    <h1>Welcome to the Download Page</h1>
+    <p>Click the buttons below to download images and PDFs:</p>
 
-    <h1>Local demo page</h1>
-    <p>
-        This is an example page used to demonstrate how to load a local file or HTML
-        string using the <a href="https://pub.dev/packages/webview_flutter">Flutter
-            webview</a> plugin.sdad
-    </p>
-    <button type="button" onclick="changeColor()" class="btn btn-info" style="width: 180px; height: 90px;"
-        value="CLICK">clicknextjs</button>
-    <button type="button" onclick="myfunction()" style="width: 180px; height: 90px;" value="CLICK">Download</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>File Name</th>
+                <th>Download Button</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Image 1</td>
+                <td><button onclick="downloadFile('image1.jpg')">Download Image 1</button></td>
+            </tr>
+            <tr>
+                <td>Image 2</td>
+                <td><button onclick="downloadFile('image2.jpg')">Download Image 2</button></td>
+            </tr>
+            <tr>
+                <td>PDF 1</td>
+                <td><button onclick="downloadFile('pdf1.pdf')">Download PDF 1</button></td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
 
-    <script type="text/javascript">
-        function myfunction() {
-            alert("how are you");
-            // 'http://enos.itcollege.ee/~jpoial/allalaadimised/reading/Android-Programming-Cookbook.pdf'
+    <script>
+        // JavaScript function to initiate the download
+        function downloadFile(fileUrl) {
+            // Construct a temporary anchor element
             JavascriptChannel.postMessage('https://upload.wikimedia.org/wikipedia/commons/6/60/The_Organ_at_Arches_National_Park_Utah_Corrected.jpg');
-            //DownloadChannel.postMessage('http://enos.itcollege.ee/~jpoial/allalaadimised/reading/Android-Programming-Cookbook.pdf');
-        }  
+            var anchor = document.createElement("a");
+            anchor.href = fileUrl;
+            anchor.download = fileUrl.split("/").pop(); // Extracts the filename from the URL
+            anchor.style.display = "none";
+
+            // Append the anchor to the body and trigger the click event
+            document.body.appendChild(anchor);
+            anchor.click();
+
+            // Remove the anchor from the body
+            document.body.removeChild(anchor);
+        }
     </script>
-
-
-
-
-
-    <button onclick="changeColor()" style="width: 180px; height: 90px;" value="CLICK">Changes color</button>
-    <button onclick="changeColor()">Change color</button>
-    <div id="my-div"></div>
-
-
 </body>
 
 </html>
