@@ -16,3 +16,12 @@ function downloadFileimagesplit(fileUrl) {
     JavascriptChannel.postMessage('https://upload.wikimedia.org/wikipedia/commons/6/60/The_Organ_at_Arches_National_Park_Utah_Corrected.jpg');
 
 }
+
+function fromFlutter(token) {
+    document.getElementById("title").innerHTML = newTitle;
+    sendBack();
+}
+
+function sendBack() {
+    messageHandler.postMessage("Hello from JS");
+}
