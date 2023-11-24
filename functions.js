@@ -18,7 +18,7 @@ function downloadFileimagesplit(fileUrl) {
 }
 
 function fromFlutter(token) {
-    document.getElementById("title").innerHTML = newTitle;
+    document.getElementById("title").innerHTML = token;
     sendBack();
 }
 

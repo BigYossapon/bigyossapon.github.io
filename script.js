@@ -6,7 +6,7 @@ function SnackBar() {
 }
 
 function fromFlutter(token) {
-    document.getElementById("title").innerHTML = newTitle;
+    document.getElementById("title").innerHTML = token;
     sendBack();
 }
 
