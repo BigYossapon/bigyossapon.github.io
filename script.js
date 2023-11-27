@@ -7,9 +7,14 @@ function SnackBar() {
 
 function fromFlutter(token) {
     document.getElementById("title").innerHTML = token;
-    sendBack();
+    sendBack(token);
 }
 
-function sendBack() {
-    messageHandler.postMessage("Hello from JS");
+function sendBack(token) {
+    messageHandler.postMessage(token);
+}
+
+function autoLogin(token) {
+    document.getElementById("title").innerHTML = token;
+    sendBack(token);
 }
