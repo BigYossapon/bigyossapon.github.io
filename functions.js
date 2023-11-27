@@ -23,7 +23,7 @@ function fromFlutter(token) {
 }
 
 function sendBack(token) {
-    messageHandler.postMessage(token);
+    requestWorkPermitSection60_2_EwpScriptChannel.postMessage(token);
 }
 
 function autoLogin(token) {
