@@ -40,18 +40,26 @@
 <body>
     <div id="gift-box" onclick="showSurprise()">🎁</div>
     <div id="surprise">
-        <img src="https://drive.google.com/file/d/1zRvRid8fBuHAamiFtptqlH677_UoRpe1/view?usp=sharing" alt="Love">
+        <img src="https://drive.google.com/uc?export=download&id=1zfaDtHBfoSB67VoTWwT0wx8tt_AURj0o" alt="Love">
         <p>สุขสันต์วันวาเลนไทน์น่ะตัว! ❤️</p>
-        <audio id="valentine-music" src="https://www.youtube.com/watch?v=YGuQKYWJ9pg" controls autoplay></audio>
+        <audio id="valentine-music" controls></audio>
     </div>
 
     <script>
         function showSurprise() {
             document.getElementById('gift-box').style.display = 'none';
             document.getElementById('surprise').style.display = 'block';
+
             let audio = document.getElementById('valentine-music');
-            audio.currentTime = 97; // กำหนดให้เล่นจากวินาทีที่ 30
+            audio.src = "https://drive.google.com/uc?export=download&id=1wBkJc5a-bsOy8lhV4qch3J_nOLH_NFcY";
+            audio.currentTime = 137; // Start at 137s
             audio.play();
+
+            audio.addEventListener('timeupdate', function () {
+                if (audio.currentTime >= 157) {
+                    audio.currentTime = 137; // Loop back to 137s
+                }
+            });
         }
     </script>
 </body>
