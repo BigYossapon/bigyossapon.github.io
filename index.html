@@ -52,12 +52,12 @@
 
             let audio = document.getElementById('valentine-music');
             audio.src = "https://www.dropbox.com/scl/fi/10egxq5bnt8ry1wkbyzx9/Malcolm-Todd-Chest-Pain-I-Love-Lyrics-ezmp3.cc.mp3?rlkey=r36011lgj94i130rr21c2b6od&dl=1";
-            audio.currentTime = 97; // Start at 137s
+            audio.currentTime = 98; // Start at 137s
             audio.play();
 
             audio.addEventListener('timeupdate', function () {
                 if (audio.currentTime >= 117) {
-                    audio.currentTime = 97; // Loop back to 137s
+                    audio.currentTime = 98; // Loop back to 137s
                 }
             });
         }
