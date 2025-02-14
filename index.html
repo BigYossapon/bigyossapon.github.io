@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Surprise</title>
+    <title>Valentine's Surprise หมูอ้วน</title>
     <style>
         body {
             display: flex;
@@ -40,16 +40,18 @@
 <body>
     <div id="gift-box" onclick="showSurprise()">🎁</div>
     <div id="surprise">
-        <img src="https://source.unsplash.com/200x200/?love" alt="Love">
-        <p>Happy Valentine's Day! ❤️</p>
-        <audio id="valentine-music" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" controls autoplay></audio>
+        <img src="https://drive.google.com/file/d/1zRvRid8fBuHAamiFtptqlH677_UoRpe1/view?usp=sharing" alt="Love">
+        <p>สุขสันต์วันวาเลนไทน์น่ะตัว! ❤️</p>
+        <audio id="valentine-music" src="https://www.youtube.com/watch?v=YGuQKYWJ9pg" controls autoplay></audio>
     </div>
 
     <script>
         function showSurprise() {
             document.getElementById('gift-box').style.display = 'none';
             document.getElementById('surprise').style.display = 'block';
-            document.getElementById('valentine-music').play();
+            let audio = document.getElementById('valentine-music');
+            audio.currentTime = 97; // กำหนดให้เล่นจากวินาทีที่ 30
+            audio.play();
         }
     </script>
 </body>
